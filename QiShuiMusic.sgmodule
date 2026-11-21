@@ -1,9 +1,16 @@
 #!name=汽水音乐净化
-#!desc=墨鱼版 QiShuiMusicAds V1.0.6 转 Shadowrocket 模块：拦截开屏/视频/弹窗广告，清理推广位
+#!desc=墨鱼版 QiShuiMusicAds V1.0.6 转 Shadowrocket 模块 V1.1：拦截开屏/视频/弹窗广告，清理推广位；新增穿山甲 SDK 直连拦截
 #!author=ddgksf2013（原 QX 配置）
 
 [MITM]
 hostname = %APPEND% beta-luna.douyin.com, api.qishui.com, *.zijieapi.com
+
+[Rule]
+# > 穿山甲广告 SDK（开屏广告来源，无需 MITM，直接拒绝连接）
+DOMAIN-SUFFIX,pangolin-sdk-toutiao.com,REJECT
+DOMAIN-SUFFIX,pangolin-sdk-toutiao1.com,REJECT
+DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com,REJECT
+DOMAIN-SUFFIX,pangolin-sdk-toutiao.co,REJECT
 
 [Rewrite]
 # > 视频广告
